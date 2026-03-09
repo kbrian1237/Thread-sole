@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thread & Sole | Modern Everyday Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="modern-nav"></header>
+    <div class="floating-cart" id="floating-cart">
+        <div class="cart-header"><h3>Your Bag</h3><button class="close-cart"><i class="fas fa-times"></i></button></div>
+        <div id="cart-items"></div>
+        <div class="cart-footer"><div class="cart-total"><span>Total:</span><span class="total-amount">$0.00</span></div><button class="checkout-btn">Checkout</button></div>
+    </div>
+    <section class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1470&q=80')">
+            <div class="hero-content"><h1>Summer Collection</h1><p class="subtitle">Lightweight fabrics for warm days ahead</p><button class="cta-button">Shop Now</button></div>
+        </div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=1526&q=80')">
+            <div class="hero-content"><h1>Everyday Essentials</h1><p class="subtitle">Timeless pieces for your daily wardrobe</p><button class="cta-button">Shop Now</button></div>
+        </div>
+    </section>
+    <section class="category-grid">
+        <div class="category-card" onclick="location.href='mens.html'">
+            <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?auto=format&fit=crop&w=764&q=80">
+            <div class="category-overlay"><h2>Men's</h2><button>Shop Collection</button></div>
+        </div>
+        <div class="category-card" onclick="location.href='womens.html'">
+            <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=687&q=80">
+            <div class="category-overlay"><h2>Women's</h2><button>Shop Collection</button></div>
+        </div>
+    </section>
+    <section class="new-arrivals" id="new-arrivals">
+        <div class="container"><div class="section-header"><h2>New Arrivals</h2></div><div class="products-grid"></div></div>
+    </section>
+    <div class="modal" id="quick-view-modal">
+        <div class="modal-content quick-view-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="quick-view-image"><img src="" id="quick-view-img" style="width:100%"></div>
+            <div class="quick-view-details">
+                <h3 id="quick-view-title"></h3><div class="price" id="quick-view-price"></div>
+                <p id="quick-view-description"></p>
+                <button class="add-to-cart-btn" style="width:100%; padding:15px; background:var(--primary); color:white; margin-top:20px">Add to Bag</button>
+            </div>
+        </div>
+    </div>
+    <footer class="modern-footer"></footer>
+    <button class="back-to-top" id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <script src="js/app.js"></script>
+</body>
+</html>

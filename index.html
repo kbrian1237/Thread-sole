@@ -1741,6 +1741,15 @@ th {
     </button>
 
     <script >
+    const escapeHTML = (str) => {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    };
     
     document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation
@@ -2058,13 +2067,13 @@ th {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.title}" class="product-image">
+            <img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.title)}" class="product-image">
             <div class="product-info">
-                <h3 class="product-title">${product.title}</h3>
+                <h3 class="product-title">${escapeHTML(product.title)}</h3>
                 <div class="product-price">$${product.price.toFixed(2)}</div>
                 <div class="product-actions">
-                    <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
-                    <button class="quick-view" data-id="${product.id}">Quick View</button>
+                    <button class="add-to-cart" data-id="${escapeHTML(product.id)}">Add to Cart</button>
+                    <button class="quick-view" data-id="${escapeHTML(product.id)}">Quick View</button>
                 </div>
             </div>
         `;
@@ -2150,16 +2159,16 @@ th {
                 
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
-                cartItem.setAttribute('data-id', item.id);
+                cartItem.setAttribute('data-id', escapeHTML(item.id));
                 cartItem.innerHTML = `
-                    <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                    <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)}" class="cart-item-img">
                     <div class="cart-item-details">
-                        <h4 class="cart-item-title">${item.title}</h4>
+                        <h4 class="cart-item-title">${escapeHTML(item.title)}</h4>
                         <div class="cart-item-price">$${item.price.toFixed(2)}</div>
                         <div class="cart-item-actions">
                             <div class="cart-item-quantity">
                                 <button class="quantity-btn decrease">-</button>
-                                <span>${item.quantity}</span>
+                                <span>${escapeHTML(item.quantity)}</span>
                                 <button class="quantity-btn increase">+</button>
                             </div>
                             <button class="remove-item">Remove</button>
@@ -2650,18 +2659,18 @@ th {
         productCard.className = 'product-card';
         productCard.innerHTML = `
             <div class="product-image-container">
-                <img src="${product.image}" alt="${product.title}" class="product-image">
-                <div class="product-badge">${product.rating} <i class="fas fa-star"></i></div>
-                <button class="wishlist-btn" data-id="${product.id}">
+                <img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.title)}" class="product-image">
+                <div class="product-badge">${escapeHTML(product.rating)} <i class="fas fa-star"></i></div>
+                <button class="wishlist-btn" data-id="${escapeHTML(product.id)}">
                     <i class="far fa-heart"></i>
                 </button>
             </div>
             <div class="product-info">
-                <h3 class="product-title">${product.title}</h3>
+                <h3 class="product-title">${escapeHTML(product.title)}</h3>
                 <div class="product-price">$${product.price.toFixed(2)}</div>
                 <div class="product-actions">
-                    <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
-                    <button class="quick-view" data-id="${product.id}">Quick View</button>
+                    <button class="add-to-cart" data-id="${escapeHTML(product.id)}">Add to Cart</button>
+                    <button class="quick-view" data-id="${escapeHTML(product.id)}">Quick View</button>
                 </div>
             </div>
         `;
@@ -2776,16 +2785,16 @@ th {
                 
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
-                cartItem.setAttribute('data-id', item.id);
+                cartItem.setAttribute('data-id', escapeHTML(item.id));
                 cartItem.innerHTML = `
-                    <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                    <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.title)}" class="cart-item-img">
                     <div class="cart-item-details">
-                        <h4 class="cart-item-title">${item.title}</h4>
+                        <h4 class="cart-item-title">${escapeHTML(item.title)}</h4>
                         <div class="cart-item-price">$${item.price.toFixed(2)}</div>
                         <div class="cart-item-actions">
                             <div class="cart-item-quantity">
                                 <button class="quantity-btn decrease">-</button>
-                                <span>${item.quantity}</span>
+                                <span>${escapeHTML(item.quantity)}</span>
                                 <button class="quantity-btn increase">+</button>
                             </div>
                             <button class="remove-item">Remove</button>
